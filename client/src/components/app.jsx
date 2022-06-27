@@ -25,7 +25,7 @@ class App extends React.Component {
       myOutfits: [],
       currentProductInOutfit: false,
       starRating: 0,
-      defaultProductId: 64627
+      defaultProductId: 71697
     };
   }
 
@@ -82,13 +82,20 @@ class App extends React.Component {
 
   getOutfits() {
     //TODO: Handle if local storage has more than just my outfits in it
-    let localStorageOutfits = Object.keys(localStorage);
+    let local = Object.keys(localStorage);
+    let localStorageOutfits = local.map((item) => {
+      if (item.includes('&*%')) {
+        return item.slice(3);
+      }
+    });
     return localStorageOutfits;
   }
 
   toggleOutfit(id) {
+    const key = '&*%' + id;
+    const value = id;
     if (!this.state.currentProductInOutfit) {
-      localStorage.setItem(id, id);
+      localStorage.setItem(key, value);
       this.setState({ myOutfits: this.getOutfits(), currentProductInOutfit: true }, () => {
         console.log(this.state.myOutfits);
       });
@@ -138,3 +145,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+//TODO make all products that are added to local storage start with &*%
