@@ -83,7 +83,6 @@ class RelatedItemsAndMyOutfits extends React.Component {
   }
 
   addProductInfo(ids) {
-    console.log('the ids', ids);
     let relatedItemsPromises = ids.map((id) => {
       let productInfoAdded = this.getProductInfo(id);
       return productInfoAdded;
@@ -102,7 +101,6 @@ class RelatedItemsAndMyOutfits extends React.Component {
   generateRelatedItemsData() {
     return this.getRelatedItems()
       .then((res) => {
-        console.log('the response for replated items', res.data.data);
         return this.addProductInfo(res.data.data);
       })
       .then((res) => {
@@ -114,8 +112,6 @@ class RelatedItemsAndMyOutfits extends React.Component {
   }
 
   generateMyOufitsData() {
-    //issue
-    console.log('is it coming from here?', this.props.myOutfits);
     return this.addProductInfo(this.props.myOutfits)
       .then((res) => {
         return res;
