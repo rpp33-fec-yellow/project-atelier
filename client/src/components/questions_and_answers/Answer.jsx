@@ -32,9 +32,9 @@ class Answer extends React.Component {
 
   renderAnswerHelpfulBtn() {
     if (this.state.AnswerHelpful) {
-      return ( <button className='answer-helpful' role='answer-help' disabled > Yes ({this.props.answer.helpfulness + 1}) </button> );
+      return ( <button className='answer-helpful' data-testid='answer-help' disabled > Yes ({this.props.answer.helpfulness + 1}) </button> );
     } else {
-      return ( <button className='answer-helpful' role='answer-help' onClick={this.markAnswerHelpful}> Yes ({this.props.answer.helpfulness}) </button> );
+      return ( <button className='answer-helpful' data-testid='answer-help' onClick={this.markAnswerHelpful}> Yes ({this.props.answer.helpfulness}) </button> );
     }
   }
 
@@ -52,9 +52,9 @@ class Answer extends React.Component {
 
   renderReportBtn() {
     if (this.state.reported) {
-      return ( <button className='answer-report' role="report" disabled> Reported </button> );
+      return ( <button className='answer-report' data-testid="report" disabled> Reported </button> );
     } else {
-      return ( <button className='answer-report' role="report" onClick={this.reportAnswer}> Report </button> );
+      return ( <button className='answer-report' data-testid="report" onClick={this.reportAnswer}> Report </button> );
     }
   }
 

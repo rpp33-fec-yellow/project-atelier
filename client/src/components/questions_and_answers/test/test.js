@@ -51,11 +51,11 @@ describe('Q&A render tests', () => {
 
   test('render QuestionList component', () => {
     const {rerender} = render(<QuestionList questions={props.questions} questionNumbers={2}/>);
-    const list = screen.getByRole('qlist');
+    const list = screen.getByTestId('qlist');
     expect(list.children.length).toEqual(2);
 
     rerender(<QuestionList questions={props.questions} questionNumbers={4}/>);
-    const newlist = screen.getByRole('qlist');
+    const newlist = screen.getByTestId('qlist');
     expect(newlist.children.length).toEqual(4);
   });
 
@@ -82,7 +82,7 @@ describe('Q&A render tests', () => {
     const answerArray = Object.values(props.questions[1].answers);
     render(<Answer answer={answerArray[0]}/>);
     const container = document.querySelector('.each-answer');
-    const helpfulBtn = screen.getAllByRole('answer-help')[0];
+    const helpfulBtn = screen.getAllByTestId('answer-help')[0];
     const reportBtn = screen.getAllByText('Report')[0];
     expect(container).toBeInTheDocument();
     expect(helpfulBtn).toBeInTheDocument();
@@ -145,7 +145,7 @@ describe('Test on Question Features', () => {
     axios.mockResolvedValueOnce({status: 204});
 
     const {rerender} = render(<Question question={props.questions[1]}/>);
-    const helpfulBtn = screen.getByRole('question-help');
+    const helpfulBtn = screen.getByTestId('question-help');
 
     expect(helpfulBtn).not.toBeDisabled();
     fireEvent.click(helpfulBtn);
@@ -169,7 +169,7 @@ describe('Test on Answer Features', () => {
     const answerArray = Object.values(props.questions[1].answers);
 
     const {rerender} = render(<Question question={props.questions[1]}/>);
-    const list = screen.getByRole('alist');
+    const list = screen.getByTestId('alist');
     expect(list.children.length).toEqual(2);
 
     const moreBtn = screen.getByText('LOAD MORE ANSWERS');
@@ -179,7 +179,7 @@ describe('Test on Answer Features', () => {
     const collapseBtn = screen.getByText('COLLAPSE ANSWERS');
     expect(collapseBtn).toBeInTheDocument();
 
-    const newlist = screen.getByRole('alist');
+    const newlist = screen.getByTestId('alist');
     expect(newlist.children.length).toEqual(answerArray.length);
   });
 
@@ -190,7 +190,7 @@ describe('Test on Answer Features', () => {
     axios.mockResolvedValueOnce({status: 204});
 
     const {rerender} = render(<Answer answer={answerArray[1]}/>);
-    const helpfulBtn = screen.getByRole('answer-help');
+    const helpfulBtn = screen.getByTestId('answer-help');
 
     expect(helpfulBtn).not.toBeDisabled();
     fireEvent.click(helpfulBtn);
@@ -204,7 +204,7 @@ describe('Test on Answer Features', () => {
     axios.mockResolvedValueOnce({status: 204});
 
     const {rerender} = render(<Answer answer={answerArray[1]}/>);
-    const reportBtn = screen.getByRole('report');
+    const reportBtn = screen.getByTestId('report');
 
     expect(reportBtn).not.toBeDisabled();
     fireEvent.click(reportBtn);

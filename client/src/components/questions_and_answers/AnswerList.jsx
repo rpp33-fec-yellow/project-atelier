@@ -14,7 +14,7 @@ const AnswerList = (props) => {
   return (
     <div className='answer-list'>
       <div className='answer-title'> A: </div>
-      <div className='answer-box' role='alist'>
+      <div className='answer-box' data-testid='alist'>
         {displayList.map((answer) => (
           <Answer answer={answer} key={answer.id}/>
         ))}
