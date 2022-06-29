@@ -1,10 +1,12 @@
-# Project Atelier
-  > Hack Reactor FEC project
+# Atelier
+[![improvibe](https://i.ibb.co/vPsDRs9/ezgif-com-gif-maker-2.gif "atelier")](https://i.ibb.co/6vWMBj5/ezgif-com-gif-maker.gif)
+  > E-commerce retail site
 
-## Team
-
-  - __Product Owner__: Team Yellow
-  - __Development Team Members__: Caitlin Winters, Eric Kalin, Joe Mitzman, Yufang Cheng
+## Features
+Product Overview - product information, style selector, add to cart, image gallery<br>
+Related Items & Outfits- related product cards, list behavior, related product list, your outfit list<br>
+Questions & Answers  - questions list, individual question, search questions, add a question, add an answer modal<br>
+Ratings & Reviews - reviews list, individual review tile, sort options, ratings breakdown, product breakdown, write new review, keyword search
 
 ## Technologies
 
@@ -13,26 +15,25 @@
 - Server
   - Node.js, Express
 - Test Suite
-  - Jest, Supertest, React-Testing-Library, etc
+  - Jest, Supertest, React-Testing-Library
 
-## Milestones
-
--   [x] **Mar 12** Project presentation
--   [x] **Mar 05** Ship functional version and share with friends
--   [x] **Mar 01** Test code coverage
--   [x] **Feb 19** Progress demo
--   [x] **Feb 12** Initial Skeleton
--   [x] **Feb 03** Start developing process
-
-
-## Usage
-
-### How to install / run locally
+## Installation and Usage
 
 From within the root directory:
 - install node package manager (if needed)
 - run `npm install`
-- add a .env file to the root of the project
-- to the .env add the following keys: API_URL=atelier-project-endpoint , API_KEY=github-key , IMG_KEY=key-from-IMGBB
-- run `npm run build` to build bundle.js
-- run `npm start` to start server on localhost:3000
+- create `.env` file with the following local variables
+
+```
+API_URL=[please request access from a contributor for access to proprietary api]
+API_KEY= github api key
+REACT_APP_IMG_KEY= imgbb api key
+```
+- run `npm start`
+-navigate to localhost:3000
+
+## Contributers
+[Caitlin Winters](https://github.com/caiwin08): Product Overview<br>
+[Eric Kalin](https://github.com/ekalin12): Related Items & Outfits<br>
+[Joe Mitzman](https://github.com/joemitz): Ratings & Reviews<br>
+[Yufang Cheng](https://github.com/yfcheng1): Questions & Answers<br>
